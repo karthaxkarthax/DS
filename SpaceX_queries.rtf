@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fswiss\fcharset0 Helvetica;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red89\green158\blue96;
+\red23\green23\blue26;\red89\green158\blue96;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c100000;\cssrgb\c41569\c67059\c45098;
+\csgenericrgb\c9020\c9020\c10196;\csgenericrgb\c34902\c61961\c37647;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29740\viewh18600\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 SELECT * FROM SPACEXTBL\
+SELECT * from SPACEXTBL WHERE Launch_site LIKE "CCA%"\
+SELECT SUM(PAYLOAD_MASS__KG_) from SPACEXTBL where customer = 'NASA (CRS)';\
+SELECT AVG(PAYLOAD_MASS__KG_) from SPACEXTBL where Booster_Version = 'F9 v1.1';\
+SELECT MIN(Date) from SPACEXTBL where Landing_Outcome = 'Success (ground pad)';\
+SELECT Booster_Version from SPACEXTBL where Landing_Outcome = 'Success (drone ship)' AND PAYLOAD_MASS__KG_ > 4000 AND PAYLOAD_MASS__KG_ < 6000;\
+SELECT COUNT(*) from SPACEXTBL where Mission_Outcome LIKE 'Fail%';\
+SELECT Booster_Version from SPACEXTBL WHERE PAYLOAD_MASS__KG_ = (SELECT MAX(PAYLOAD_MASS__KG_) FROM SPACEXTBL);\
+\
+SELECT Landing_Outcome, COUNT(Landing_Outcome) from SPACEXTBL WHERE Date > '2010-06-04' AND Date < '2017-03-20' GROUP BY ( Landing_Outcome) ORDER BY COUNT (Landing_Outcome) DESC ;\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \cb1 \expnd0\expndtw0\kerning0
+SELECT Landing_Outcome, COUNT(Landing_Outcome), Booster_Version, Launch_Site from SPACEXTBL WHERE Date > \'912014-12-31' AND Date < \'912016-01-01\'92 AND Landing_Outcome = \'91Failure (drone ship)\'92
+\f2 \cf2  
+\f0 \cf2 \cb5 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf6 \
+}
